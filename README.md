@@ -44,11 +44,8 @@ Este projeto está em fase inicial de desenvolvimento por estudantes de Análise
 - [ ] Autenticação real
 - [ ] Sistema de notificações
 
----
 
-*Projeto educacional - Versão inicial*
-
-## 📁 Estrutura de pastas do projeto
+## 📁 Estrutura de pastas atual do projeto
 
 ```
 RTweb
@@ -62,3 +59,7 @@ RTweb
     │   └── styles.css {} 
     └── 📁 js 
 ```
+
+---
+
+*Projeto educacional - Versão inicial*
