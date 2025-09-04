@@ -5,6 +5,7 @@ Sistema de controle de estoque para micro e pequenos negócios.
 
 Sistema web para gerenciamento de estoque desenvolvido para micro e pequenas empresas focado no setor alimentício.
 
+
 ## 🛠️ Tecnologias Utilizadas
 
 - HTML5
