@@ -5,20 +5,6 @@ Sistema de controle de estoque para micro e pequenos negócios.
 
 Sistema web para gerenciamento de estoque desenvolvido para micro e pequenas empresas focado no setor alimentício.
 
-## 🚀 Como Executar
-
-1. **Faça o download** dos arquivos do projeto
-2. **Abra o arquivo `index.html`** em seu navegador
-3. **Ou use um servidor local**:
-   ```bash
-   # Python
-   python -m http.server 8000
-   
-   # Node.js (se instalado)
-   npx serve
-   ```
-4. **Acesse** `http://localhost:8000`
-
 ## 🛠️ Tecnologias Utilizadas
 
 - HTML5
