@@ -5,12 +5,12 @@
 ```
 RTweb
 ├── README.md 
-├── index.html 
+├── index.html </>
 └── 📁 src 
     ├── 📁 assets 
     │   ├── 📁 fonts 
     │   └── 📁 images 
     ├── 📁 css 
-    │   └── styles.css 
+    │   └── styles.css {} 
     └── 📁 js 
 ```
