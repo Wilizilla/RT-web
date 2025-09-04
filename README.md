@@ -2,11 +2,10 @@
 
 ## Estrutura de pastas do projeto
 
+```
 RTweb
 ├── README.md 📝
-
 ├── index.html 📝
-
 └── src 📁
     ├── assets 📁
     │   ├── fonts 📁
@@ -14,4 +13,4 @@ RTweb
     ├── css 📁
     │   └── styles.css 📝
     └── js 📁
-
+```
