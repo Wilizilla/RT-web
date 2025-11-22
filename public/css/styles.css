@@ -1,0 +1,297 @@
+/* Variáveis de Cores e Tamanhos */
+:root {
+    --primary-color: #FF4081;
+    /* Cor de destaque (Rosa) */
+    --primary-dark: #C12D60;
+    --secondary-color: #009688;
+    /* Cor principal (Verde-água) */
+    --secondary-dark: #006156;
+
+    --text-color: #000000;
+    --secondary-text-color: #6c757d;
+    --background-light: #ffffff;
+    --sidebar-width: 250px;
+    --border-light: #e9ecef;
+}
+
+/* layout */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--background-light);
+}
+
+/* Container Principal: Navbar, Sidebar e Conteúdo */
+.dashboard-container {
+    display: grid;
+    /* Navbar, Sidebar e Main (conteúdo) */
+    grid-template-areas:
+        "navbar navbar"
+        "sidebar main";
+    grid-template-columns: var(--sidebar-width) 1fr;
+    min-height: 100vh;
+}
+
+/* Navbar Fixo */
+.navbar-top {
+    grid-area: navbar;
+    background-color: var(--secondary-dark);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    position: fixed;
+    /* Fixo no topo */
+    width: 100%;
+    z-index: 1020;
+}
+
+/* breadcrumb*/
+
+.bread-crumb {
+    /* Posição */
+    position: fixed;
+    top: 80px;
+    /* Logo abaixo da navbar (80px) */
+    left: var(--sidebar-width);
+    /* Começa onde a sidebar termina */
+    z-index: 1010;
+    /* Acima do conteúdo principal */
+
+    /* Estilos */
+    width: calc(100% - var(--sidebar-width));
+    /* Largura total menos a sidebar */
+    background-color: var(--background-light);
+    /* Fundo branco fixo */
+    height: 64px;
+    padding: 24 16px;
+    /* Padding horizontal */
+    display: flex;
+    align-items: center;
+
+    /* Borda Inferior */
+    border-bottom: 1px solid var(--border-light);
+    border-left: 1px solid var(--border-light);
+    box-sizing: border-box;
+
+}
+
+/* Sidebar */
+.sidebar {
+    grid-area: sidebar;
+    background-color: white;
+    padding-top: 80px;
+    /* Começa logo abaixo do Navbar (80px) */
+    border-right: 1px solid var(--border-light);
+    position: fixed;
+    height: 100vh;
+    overflow-x: hidden;
+    z-index: 1000;
+    width: var(--sidebar-width);
+}
+
+/* Conteúdo Principal */
+.main-content {
+    grid-area: main;
+    padding-top: 144px;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-bottom: 32px;
+}
+
+/* links, botões e tabelas */
+
+
+/* Links da Sidebar */
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu a {
+    display: flex;
+    align-items: center;
+    padding: 16px 24px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    text-decoration: none;
+    color: var(--secondary-text-color);
+    white-space: nowrap;
+}
+
+.sidebar-menu a i {
+    margin-right: 16px;
+    font-size: 1rem;
+    width: 25px;
+    text-align: center;
+}
+
+.sidebar-menu a:hover {
+    color: var(--secondary-color);
+}
+
+/* Link Ativo */
+.sidebar-menu a.active {
+    color: var(--secondary-color);
+    border-right: 5px solid var(--secondary-color);
+
+}
+
+/* Rodapé da Sidebar (Sair) */
+.sidebar-footer {
+    position: absolute;
+    bottom: 0;
+    width: 10%;
+    /* Ajuste a largura*/
+    border-top: 1px solid var(--border-light);
+    padding: 10px 0;
+}
+
+/* Botões */
+.btn {
+    padding: 8px 24px;
+    border: none;
+    border-radius: 64px;
+    cursor: pointer;
+    font-weight: 500
+}
+
+.btn-link {
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    font-weight: regular;
+    transition: background-color 0.2s;
+    color: var(--primary-dark);
+    background-color: var(--background-light)
+}
+
+.btn-accent {
+    padding: 8px 15px;
+    margin: 8px;
+    border-radius: 64px;
+    cursor: pointer;
+    font-weight: regular;
+    transition: background-color 0.2s;
+    color: var(--background-light);
+    background-color: var(--primary-color)
+}
+
+.find-button {
+    background-color: var(--background-light);
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Inputs e Filtros */
+.filter-row {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 32px;
+    border-radius: 64px;
+}
+
+.input-group {
+    display: flex;
+    flex-grow: 1;
+}
+
+.input-group {
+    color: var(--secondary-text-color);
+    padding: 8px 12px;
+    border: 1px solid var(--border-light);
+    border-radius: 64px;
+    font-size: 1rem;
+    flex-grow: 1;
+}
+
+.filter-row {
+    padding: 8px 12px;
+    border-radius: 64px;
+    font-size: 1rem;
+    flex-grow: 1;
+}
+
+select {
+    color: var(--secondary-text-color);
+    padding: 8px 12px;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    font-size: 1rem;
+    flex-grow: 1;
+}
+
+input {
+    padding: 8px;
+    border: none;
+    font-size: 1rem;
+    flex-grow: 1;
+}
+
+/* Tabela */
+.card {
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+.table-inventory {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.table-inventory th {
+    padding: 16px 16px;
+    border-bottom: 1px solid var(--border-light);
+}
+.table-inventory td {
+    padding: 16px 16px;
+    border-bottom: 1px solid var(--border-light);
+    color: var(--secondary-text-color);
+}
+
+.table-inventory th {
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.table-inventory tr:last-child td {
+    border-bottom: none;
+    color: var(--secondary-text-color);
+}
+
+.table-inventory tr:hover {
+    background-color: var(--border-light);
+    color: var(--secondary-text-color);
+}
+
+.action-footer {
+    display: flex;
+    justify-content:flex-end;
+    padding:15px 32px;
+    position: fixed;
+    bottom: 0;
+    background-color: var(--background-light);
+    left: var(--sidebar-width); 
+    width: calc(100% - var(--sidebar-width) - 64px);
+    border-left: 1px solid var(--border-light);
+    box-shadow: 0 -1px 8px rgba(0, 0, 0, 0.1); 
+    z-index: 1000; 
+}
+
+h1 {
+    margin-bottom: 80px;
+    margin-top: 32px;
+}

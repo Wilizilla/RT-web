@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventário RT Web </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+
+</head>
+<body>
+
+    <div class="dashboard-container">
+        
+        <nav class="navbar-top">
+            <div style="display: flex; align-items: center;">
+                <button class="btn" style="background: none; color: white;" id="sidebarToggle" aria-label="Toggle menu">
+                </button>
+                <div class="logo-text">
+                    <img src="../assets/images/logo-negativo.svg" alt="logo R.T. WEB"> <!-- Nnao entendi o motivo, mas o caminho ficou assim quando usei o public--> 
+                </div>
+            </div>
+            <div>
+                <button class="btn" style="background: none; color: white;" aria-label="Notificações">
+                    <img src="../assets/images/bell.svg" alt="Notificações">
+                </button>
+                <button class="btn" style="background: none; color: white;" aria-label="Notificações">
+                        <img src="../assets/images/menu.svg" alt="Menu">
+                </button>
+            </div>
+        </nav>
+
+        <aside class="sidebar" id="sidebarMenu">
+            <nav>
+                <ul class="sidebar-menu pt-4"> 
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-tachometer-alt"></i> <span class="link-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-box-open"></i> <span class="link-text">Gestão do estoque</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="active" aria-current="page" href="#">
+                            <i class="fas fa-warehouse"></i> <span class="link-text">Inventário</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-history"></i> <span class="link-text">Histórico</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-bell"></i> <span class="link-text">Notificações</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-cog"></i> <span class="link-text">Configurações</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <a class="sidebar-menu-item" href="#" style="display: flex; justify-content: center; text-decoration: none;">
+                    <i class="fas fa-sign-out-alt"></i> <span class="link-text" style="margin-left: 10px; color: var(--secondary-text-color);">Sair</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content" id="mainContent">
+
+            <div class="bread-crumb"> 
+                <button class="btn" style="background: none; color: white;" aria-label="Notificações">
+                    <img src="../assets/images/back.svg" alt="Voltar para página anterior">
+                </button>
+            </div>
+
+
+            <h1>Inventário</h1>
+
+            <div class="filter-row">
+                <div class="input-group" style="max-width: 350px;">
+                    <input type="text" placeholder="Procurar por um item" aria-label="Procurar por um item">
+                    <button class="find-button" type="button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <select style="max-width: 200px;" aria-label="Tipo de produto">
+                    <option selected>Tipo de produto</option>
+                    <option value="1">Alimentos</option>
+                    <option value="2">Eletrônicos</option>
+                </select>
+                <button class="btn btn-accent">Buscar</button>
+            </div>
+
+            <div class="card">
+                <div style="overflow-x: auto;">
+                    <table class="table-inventory">
+                        <thead>
+                            <tr>
+                                <th style="width: 50px;"></th> <th>Código</th>
+                                <th>Nome</th>
+                                <th>Data de compra</th>
+                                <th>Validade</th>
+                                <th>Quantidade</th>
+                                <th style="width: 50px;"></th> </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><input type="checkbox" aria-label="Selecionar item"></td><td>12349</td><td>Azeite de Oliva Extra Virgem</td><td>2024-04-15</td><td>2025-04-15</td><td>48</td><td><a href="#" aria-label="Ver detalhes"><i class="fas fa-arrow-right"></i></a></td></tr>
+                            <tr><td><input type="checkbox" aria-label="Selecionar item"></td><td>12350</td><td>Arroz Arbório</td><td>2024-03-10</td><td>2025-03-10</td><td>120</td><td><a href="#" aria-label="Ver detalhes"><i class="fas fa-arrow-right"></i></a></td></tr>
+                            <tr><td><input type="checkbox" aria-label="Selecionar item"></td><td>12351</td><td>Vinho Tinto Reserva</td><td>2024-02-20</td><td>2026-02-20</td><td>36</td><td><a href="#" aria-label="Ver detalhes"><i class="fas fa-arrow-right"></i></a></td></tr>
+                            <tr><td><input type="checkbox" aria-label="Selecionar item"></td><td>12352</td><td>Queijo Parmesão</td><td>2024-05-05</td><td>2024-08-05</td><td>25</td><td><a href="#" aria-label="Ver detalhes"><i class="fas fa-arrow-right"></i></a></td></tr>
+                            <tr><td><input type="checkbox" aria-label="Selecionar item"></td><td>12353</td><td>Sal Marinho</td><td>2024-01-30</td><td>2026-01-30</td><td>85</td><td><a href="#" aria-label="Ver detalhes"><i class="fas fa-arrow-right"></i></a></td></tr>
+                            <tr><td><input type="checkbox" aria-label="Selecionar item"></td><td>12354</td><td>Pimenta do Reino</td><td>2024-03-25</td><td>2025-09-25</td><td>42</td><td><a href="#" aria-label="Ver detalhes"><i class="fas fa-arrow-right"></i></a></td></tr>
+                            <tr><td><input type="checkbox" aria-label="Selecionar item"></td><td>12355</td><td>Tomate San Marzano</td><td>2024-05-12</td><td>2024-08-12</td><td>60</td><td><a href="#" aria-label="Ver detalhes"><i class="fas fa-arrow-right"></i></a></td></tr>
+                            <tr><td><input type="checkbox" aria-label="Selecionar item"></td><td>12356</td><td>Massa Fresca</td><td>2024-05-18</td><td>2024-05-25</td><td>35</td><td><a href="#" aria-label="Ver detalhes"><i class="fas fa-arrow-right"></i></a></td></tr>
+                            <tr><td><input type="checkbox" aria-label="Selecionar item"></td><td>12357</td><td>Azeitonas Verdes</td><td>2024-04-22</td><td>2025-04-22</td><td>28</td><td><a href="#" aria-label="Ver detalhes"><i class="fas fa-arrow-right"></i></a></td></tr>
+                            <tr><td><input type="checkbox" aria-label="Selecionar item"></td><td>12358</td><td>Alcaparras</td><td>2024-02-14</td><td>2026-02-14</td><td>22</td><td><a href="#" aria-label="Ver detalhes"><i class="fas fa-arrow-right"></i></a></td></tr>
+                            <tr><td><input type="checkbox" aria-label="Selecionar item"></td><td>12359</td><td>Manjericão Fresco</td><td>2024-05-20</td><td>2024-05-27</td><td>15</td><td><a href="#" aria-label="Ver detalhes"><i class="fas fa-arrow-right"></i></a></td></tr>
+                            <tr><td><input type="checkbox" aria-label="Selecionar item"></td><td>12360</td><td>Carne Bovina Prime</td><td>2024-05-19</td><td>2024-05-26</td><td>45</td><td><a href="#" aria-label="Ver detalhes"><i class="fas fa-arrow-right"></i></a></td></tr>
+                            <tr><td><input type="checkbox" aria-label="Selecionar item"></td><td>12361</td><td>Peixe Fresco do Dia</td><td>2024-05-21</td><td>2024-05-23</td><td>18</td><td><a href="#" aria-label="Ver detalhes"><i class="fas fa-arrow-right"></i></a></td></tr>
+                            <tr><td><input type="checkbox" aria-label="Selecionar item"></td><td>12362</td><td>Camarrão Congelado</td><td>2024-04-10</td><td>2025-04-10</td><td>30</td><td><a href="#" aria-label="Ver detalhes"><i class="fas fa-arrow-right"></i></a></td></tr>
+                            <tr><td><input type="checkbox" aria-label="Selecionar item"></td><td>12363</td><td>Café Especial</td><td>2024-03-05</td><td>2025-03-05</td><td>55</td><td><a href="#" aria-label="Ver detalhes"><i class="fas fa-arrow-right"></i></a></td></tr>
+                            <tr><td><input type="checkbox" aria-label="Selecionar item"></td><td>12364</td><td>Açúcar Mascavo</td><td>2024-02-28</td><td>2025-08-28</td><td>65</td><td><a href="#" aria-label="Ver detalhes"><i class="fas fa-arrow-right"></i></a></td></tr>
+                            <tr><td><input type="checkbox" aria-label="Selecionar item"></td><td>12365</td><td>Farinha de Trigo 00</td><td>2024-04-08</td><td>2025-04-08</td><td>75</td><td><a href="#" aria-label="Ver detalhes"><i class="fas fa-arrow-right"></i></a></td></tr>
+                            <tr><td><input type="checkbox" aria-label="Selecionar item"></td><td>12366</td><td>Vinagre Balsâmico</td><td>2024-01-25</td><td>2026-01-25</td><td>32</td><td><a href="#" aria-label="Ver detalhes"><i class="fas fa-arrow-right"></i></a></td></tr>
+                            <tr><td><input type="checkbox" aria-label="Selecionar item"></td><td>12367</td><td>Copos de Vinho</td><td>2024-03-15</td><td>N/A</td><td>120</td><td><a href="#" aria-label="Ver detalhes"><i class="fas fa-arrow-right"></i></a></td></tr>
+                            <tr><td><input type="checkbox" aria-label="Selecionar item"></td><td>12368</td><td>Pratos de Porcelana</td><td>2024-02-10</td><td>N/A</td><td>80</td><td><a href="#" aria-label="Ver detalhes"><i class="fas fa-arrow-right"></i></a></td></tr>
+                            <tr><td><input type="checkbox" aria-label="Selecionar item"></td><td>12369</td><td>Talheres Inox</td><td>2024-01-20</td><td>N/A</td><td>150</td><td><a href="#" aria-label="Ver detalhes"><i class="fas fa-arrow-right"></i></a></td></tr>
+                            <tr><td><input type="checkbox" aria-label="Selecionar item"></td><td>12370</td><td>Toalhas de Mesa</td><td>2024-04-30</td><td>N/A</td><td>60</td><td><a href="#" aria-label="Ver detalhes"><i class="fas fa-arrow-right"></i></a></td></tr>
+                            <tr><td><input type="checkbox" aria-label="Selecionar item"></td><td>12371</td><td>Guardanapos de Pano</td><td>2024-05-08</td><td>N/A</td><td>200</td><td><a href="#" aria-label="Ver detalhes"><i class="fas fa-arrow-right"></i></a></td></tr>
+                            <tr><td><input type="checkbox" aria-label="Selecionar item"></td><td>12372</td><td>Forma para Pizza</td><td>2024-03-28</td><td>N/A</td><td>25</td><td><a href="#" aria-label="Ver detalhes"><i class="fas fa-arrow-right"></i></a></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="action-footer">
+                <button class="btn btn-link">Excluir item</button>
+                <button class="btn btn-primary">Salvar alterações</button>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.getElementById('sidebarToggle').addEventListener('click', function() {
+            const body = document.body;
+            // A classe 'sidebar-collapsed' manipula o CSS Grid para o efeito retrátil
+            body.classList.toggle('sidebar-collapsed');
+        });
+    </script>
+</body>
+</html>
