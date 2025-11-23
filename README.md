@@ -35,18 +35,31 @@ Este projeto está em fase inicial de desenvolvimento por estudantes de Análise
 ## 📁 Estrutura de pastas atual do projeto
 
 ```
-RTweb
-├── README.md 
-├── index.html </>
-└── 📁 src 
-    ├── 📁 assets 
-    │   ├── 📁 fonts 
-    │   └── 📁 images 
-    ├── 📁 css 
-    │   └── styles.css {} 
-    └── 📁 js 
-```
 
+├── README.md
+├── frontend
+├── index.js
+├── package-lock.json
+├── package.json
+├── 📁 public
+│   ├── 📁 assets
+│   │   ├── 📁 fonts
+│   │   └── 📁 images
+│   └── 📁 css
+│       └── styles.css
+├── 📁 node_modules // -depende da instalação no node-
+├── routes.js
+└── 📁 src
+    ├── 📁 config
+    ├── 📁 controllers
+    │   └── dataController.js
+    ├── 📁 middlewares
+    │   └── globalMiddleware.js
+    ├── 📁 models
+    └── 📁 views
+        └── index.ejs
+
+```
 ---
 
 *Projeto educacional - Versão inicial*
