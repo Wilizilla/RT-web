@@ -14,11 +14,11 @@ Sistema web para gerenciamento de estoque desenvolvido para micro e pequenas emp
 
 ## 📦 Funcionalidades
 
-- ✅ Página de login
-- ✅ Dashboard com resumo
-- ✅ Cadastro de produtos
-- ✅ Controle de quantidade
-- ✅ Interface responsiva
+- [X] Página de login
+- [X] Dashboard com resumo
+- [X] Cadastro de produtos
+- [X] Controle de quantidade
+- [X] Interface responsiva
 
 ## 👥 Desenvolvimento
 
@@ -27,7 +27,7 @@ Este projeto está em fase inicial de desenvolvimento por estudantes de Análise
 ## 📝 Próximas Etapas
 
 - [ ] Backend com Node.js
-- [ ] Banco de dados MySQL
+- [X] Banco de dados MySQL
 - [ ] Autenticação real
 - [ ] Sistema de notificações
 
