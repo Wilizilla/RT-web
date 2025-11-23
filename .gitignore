@@ -1,0 +1,9 @@
+# Ignorar arquivos de log
+*.log
+
+# Ignorar pasta de dependências/build
+node_modules/
+dist/
+
+# Ignorar o arquivo que removemos do rastreamento no Passo 1
+.env

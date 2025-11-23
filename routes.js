@@ -6,4 +6,4 @@ const dataController = require ('./src/controllers/dataController.js'); // não 
 route.get ('/' , dataController.productSearch); // rota para listar os produtos
 //route.update ('/' , dataController.productUpdate);
 
-module.exports = route;
+module.exports = route; // tem que ficar no finals
