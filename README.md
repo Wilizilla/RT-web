@@ -47,7 +47,7 @@ Este projeto está em fase inicial de desenvolvimento por estudantes de Análise
 │   │   └── 📁 images
 │   └── 📁 css
 │       └── styles.css
-├── 📁 node_modules // -depende da instalação no node-
+├── 📁 node_modules // *depende da instalação no node*
 ├── routes.js
 └── 📁 src
     ├── 📁 config
