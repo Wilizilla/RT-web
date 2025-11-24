@@ -29,7 +29,7 @@ exports.listarProdutos = async (req, res) => {
       group: ['Produto.id_produto'],
     });
     
-    res.render('produtos', { produtos });
+    res.render('index', { produtos });
   } catch (error) {
     console.error("Erro na listagem:", error);
     res.status(500).send({ message: 'Erro ao listar produtos', error: error.message });

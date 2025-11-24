@@ -41,19 +41,20 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
+    height: 64px;
     position: fixed;
     /* Fixo no topo */
     width: 100%;
     z-index: 1020;
 }
 
+
 /* breadcrumb*/
 
 .bread-crumb {
     /* Posição */
     position: fixed;
-    top: 80px;
+    top: 64px;
     /* Logo abaixo da navbar (80px) */
     left: var(--sidebar-width);
     /* Começa onde a sidebar termina */
@@ -65,7 +66,7 @@ body {
     /* Largura total menos a sidebar */
     background-color: var(--background-light);
     /* Fundo branco fixo */
-    height: 64px;
+    height: 80px;
     padding: 24 16px;
     /* Padding horizontal */
     display: flex;
@@ -75,6 +76,7 @@ body {
     border-bottom: 1px solid var(--border-light);
     border-left: 1px solid var(--border-light);
     box-sizing: border-box;
+    
 
 }
 
@@ -152,11 +154,11 @@ body {
 
 /* Botões */
 .btn {
-    padding: 8px 24px;
+    padding: 8px 16px;
     border: none;
     border-radius: 64px;
     cursor: pointer;
-    font-weight: 500
+    font-weight: 200;
 }
 
 .btn-link {
@@ -198,8 +200,13 @@ body {
 .filter-row {
     display: flex;
     gap: 24px;
-    margin-bottom: 32px;
+    /*margin-bottom: 32px;*/
     border-radius: 64px;
+    padding: 8px 12px;
+    margin-left: auto; /* Isso empurra para a direita */
+    margin-bottom: 32px; /* Isso empurra para a direita */
+    margin-top: 32px; /* Isso empurra para a direita */
+
 }
 
 .input-group {
@@ -216,12 +223,6 @@ body {
     flex-grow: 1;
 }
 
-.filter-row {
-    padding: 8px 12px;
-    border-radius: 64px;
-    font-size: 1rem;
-    flex-grow: 1;
-}
 
 select {
     color: var(--secondary-text-color);
@@ -286,12 +287,16 @@ input {
     background-color: var(--background-light);
     left: var(--sidebar-width); 
     width: calc(100% - var(--sidebar-width) - 64px);
+    height: fit-content;
     border-left: 1px solid var(--border-light);
     box-shadow: 0 -1px 8px rgba(0, 0, 0, 0.1); 
     z-index: 1000; 
 }
 
 h1 {
-    margin-bottom: 80px;
+    margin-bottom: 32px;
     margin-top: 32px;
+    font-weight: 800;
+    font-size: 1.5rem;
+
 }

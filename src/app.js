@@ -1,7 +1,7 @@
 // src/app.js
 const express = require('express');
 const sequelize = require('./config/database');
-const produtoRoutes = require('./routes/produtoRoutes');
+const produtoRoutes = require('./routers/routes');
 const path = require('path');
 
 const Produto = require('./models/Produto');
