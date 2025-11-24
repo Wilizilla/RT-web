@@ -3,7 +3,7 @@
 const express = require ('express'); // importação de módulo da pasta node-modules
 const app = express(); // por convenção o nome é app, mas poderia ser outro nome
 const porta = 3303; // a porta normal seria 3000
-const routes = require ('./routes.js') // puxa as rotas
+const routes = require ('./src/routers/routes.js') // puxa as rotas
 const path = require ('path'); // modulo para manipular caminhos de arquivos e diretórios em diferentes SOs
 const globalMiddleware = require ('./src/middlewares/globalMiddleware.js') // configuração do middleware global
 
