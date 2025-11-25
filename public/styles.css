@@ -208,13 +208,26 @@ body {
     margin-top: 32px; /* Isso empurra para a direita */
 
 }
+.form-collun {
+    display: list-item;
+    gap: 24px;
+    /*margin-bottom: 32px;*/
+    border-radius: 64px;
+    padding: 8px 12px;
+    margin-left: auto; /* Isso empurra para a direita */
+    margin-bottom: 32px; /* Isso empurra para a direita */
+    margin-top: 32px; /* Isso empurra para a direita */
 
-.input-group {
-    display: flex;
-    flex-grow: 1;
+}
+
+.form-label{
+    margin-bottom: 32px;
+    margin-top: 32px; /* Isso empurra para a direita */
+
 }
 
 .input-group {
+    display: flex;
     color: var(--secondary-text-color);
     padding: 8px 12px;
     border: 1px solid var(--border-light);
@@ -300,3 +313,52 @@ h1 {
     font-size: 1.5rem;
 
 }
+
+ /* Estilos básicos para os modais */
+        .modal {
+            display: none; /* Escondido por padrão */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4); /* Fundo semi-transparente */
+        }
+        .modal-content {
+            background-color: var(--background-light);
+            border: 1px solid #888;
+            border-radius: 4px;
+
+            /* 1. Largura: A chave para respeitar o conteúdo */
+            /* Define que a largura deve ser determinada pelo conteúdo, e não forçada */
+            width: auto; 
+            
+            /* 2. Limites: Define uma largura máxima para que modais grandes não dominem a tela */
+            max-width: 90%; /* Por exemplo, não mais que 90% da tela */
+            min-width: 300px; /* Garante uma largura mínima para legibilidade */
+            
+            /* 3. Estilos de aparência */
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            
+            /* 4. Margem: Ajuda a centralizar verticalmente em navegadores mais antigos (opcional, já que .modal usa flex) */
+            margin: auto; 
+            
+            /* 5. Empilhamento: Acima do backdrop (do .modal) */
+            z-index: 10000;
+        }
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close-btn:hover,
+        .close-btn:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    

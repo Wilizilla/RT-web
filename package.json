@@ -1,30 +1,16 @@
 {
-  "name": "00-rtweb",
-  "version": "1.0.0",
-  "description": "Sistema de controle de estoque para micro e pequenos negócios.",
-  "main": "index.js",
+"name": "00-RTWEB",
+  
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Wilizilla/RT-web.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/Wilizilla/RT-web/issues"
-  },
-  "homepage": "https://github.com/Wilizilla/RT-web#readme",
+
   "dependencies": {
+    "dotenv": "^17.2.3",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
-    "mysql2": "^3.15.3",
-    "path": "^0.12.7",
-    "sequelize": "^6.37.7"
+    "mysql2": "^3.15.3"
   },
   "devDependencies": {
     "nodemon": "^3.1.11"

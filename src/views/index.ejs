@@ -3,32 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inventário RT Web </title>
+    <title>Inventário RT Web</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="../css/styles.css">
-
+    <link rel="stylesheet" href="/styles.css"> 
 </head>
 <body>
 
     <div class="dashboard-container">
-        
+
+<!-- 
+▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+                NAVBAR
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+-->
         <nav class="navbar-top">
             <div style="display: flex; align-items: center;">
                 <button class="btn" style="background: none; color: white;" id="sidebarToggle" aria-label="Toggle menu">
                 </button>
                 <div class="logo-text">
-                    <img src="../assets/images/logo-negativo.svg" alt="logo R.T. WEB"> <!-- Nnao entendi o motivo, mas o caminho ficou assim quando usei o public--> 
+                    <img src="/assets/images/logo-negativo.svg" alt="logo R.T. WEB"> 
                 </div>
             </div>
             <div>
                 <button class="btn" style="background: none; color: white;" aria-label="Notificações">
-                    <img src="../assets/images/bell.svg" alt="Notificações">
+                    <img src="/assets/images/bell.svg" alt="Notificações">
                 </button>
                 <button class="btn" style="background: none; color: white;" aria-label="Notificações">
-                        <img src="../assets/images/menu.svg" alt="Menu">
+                    <img src="/assets/images/menu.svg" alt="Menu">
                 </button>
             </div>
         </nav>
+<!-- 
+▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+                Sidebar
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+-->
 
         <aside class="sidebar" id="sidebarMenu">
             <nav>
@@ -73,15 +82,35 @@
             </div>
         </aside>
 
+<!-- 
+▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+                Main
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+-->
+
         <main class="main-content" id="mainContent">
 
+<!-- 
+▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+              Breadcrumb
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+-->
+
             <div class="bread-crumb"> 
-                <button class="btn" style="background: none; color: white;" aria-label="Notificações">
-                    <img src="../assets/images/back.svg" alt="Voltar para página anterior">
+                <button class="btn" style="background: none;" aria-label="Notificações">
+                    <img src="/assets/images/back.svg" alt="Voltar para página anterior">
                 </button>
-            <h1>Inventário</h1>
+                
+                <h1>Inventário</h1>
+
+                </button>
             </div>
 
+<!-- 
+▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+              Filtros
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+-->
 
 
             <div class="filter-row">
@@ -99,53 +128,298 @@
                 <button class="btn btn-accent">Buscar</button>
             </div>
 
+<!-- 
+▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+        Tabela (Miolo da página)
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+-->            
+
             <div class="card">
                 <div style="overflow-x: auto;">
-                    <table class = 'table-inventory'>
+                    <table class='table-inventory'>
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Nome</th>
-                                <!-- <th>Marca</th> -->
-                                <th>Estoque Atual</th>
+                                <th>Produto</th>
                                 <th>Unidade</th>
+                                <th>Estoque</th>
                                 <th>Ações</th>
                             </tr>
                         </thead>
                         <tbody>
                             <% produtos.forEach(produto => { %>
-                                <tr data-id="<%= produto.id_produto %>">
+                                <tr id="row-<%= produto.id_produto %>">
                                     <td><%= produto.id_produto %></td>
-                                    <td><%= produto.nomeProduto %></td>
-                                    <!-- <td><%= produto.marca %></td> -->
-                                    <td><strong id="estoque-<%= produto.id_produto %>"><%= produto.dataValues.estoqueTotal || 0 %></strong></td>
-                                    <td><%= produto.tipoUnidade %></td>
+                                    <td><%= produto.nome_produto %></td>
+                                    <td><%= produto.tipo_unidade %></td>
+                                    <td id="quant-<%= produto.id_produto %>"><%= produto.quant_estoque %></td>
                                     <td>
-                                        <button class="btn-edit" onclick="openEditModal(<%= produto.id_produto %>)">Editar</button>
+                                        <button class="btn btn-sm btn-info" onclick="openEditModal(<%= produto.id_produto %>, '<%= produto.nome_produto %>', <%= produto.quant_estoque %>)">
+                                            ✏️ Movimentar
+                                        </button>
+                                        <button class="btn btn-sm btn-danger" onclick="excluirProduto(<%= produto.id_produto %>, '<%= produto.nome_produto %>')">
+                                            🗑️ Excluir
+                                        </button>
                                     </td>
                                 </tr>
                             <% }); %>
-                            <% if (produtos.length === 0) { %>
-                                <tr><td colspan="6">Nenhum produto cadastrado.</td></tr>
-                            <% } %>
                         </tbody>
-    </table>
+                    </table>
                 </div>
             </div>
 
+<!-- 
+▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+                Footer
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+-->
+
             <div class="action-footer">
-                <button class="btn btn-link">Excluir item</button>
-                <button class="btn btn-primary">Salvar alterações</button>
+                <!-- <button class="btn btn-link">Excluir item</button> -->
+                <button class="btn btn-primary" onclick="openModal('addProdutoModal')"> Novo item
+                </button>
             </div>
         </main>
     </div>
-    <script src="/js/main.js"></script>
+
+<!-- 
+▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+              Modais
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+-->
+
+    <div id="addProdutoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('addProdutoModal')">&times;</span>
+            <h3>Adicionar Produto e Entrada Inicial</h3>
+            <form id="addProdutoForm"  class="form-collun">
+                <div class="mb-3">
+                    <label for="nome" class="form-label">Nome do Produto:</label>
+                    <input type="text" class="input-group" id="nome" name="nome" required>
+                </div>
+                <div class="mb-3">
+                    <label for="unidade" class="form-label">Tipo de Unidade (ex: Quilo, Garrafa):</label>
+                    <input type="text" class="input-group" id="unidade" name="unidade" required>
+                </div>
+                <div class="mb-3">
+                    <label for="quantidade" class="form-label">Quantidade Inicial de Entrada:</label>
+                    <input type="number" class="input-group" id="quantidade" name="quantidade" min="1" required>
+                </div>
+                <button type="submit" class="btn">✅ Salvar Produto</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="editProdutoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('editProdutoModal')">&times;</span>
+            <h3 id="editModalTitle">Movimentar Estoque</h3>
+            <p>Estoque atual: <strong id="estoqueAtualDisplay"></strong></p>
+            <form id="editProdutoForm">
+                <input type="hidden" id="edit_id_produto" name="id_produto">
+                
+                <div class="mb-3">
+                    <label for="edit_quantidade" class="form-label">Quantidade a Movimentar:</label>
+                    <input type="number" class="form-control" id="edit_quantidade" name="quantidade" min="1" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="tipo_movimentacao" class="form-label">Tipo de Movimentação:</label>
+                    <select class="form-select" id="tipo_movimentacao" name="tipo_movimentacao" required>
+                        <option value="entrada">Entrada (Adicionar)</option>
+                        <option value="saida">Saída (Remover)</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn">🔄 Registrar Movimentação</button>
+            </form>
+        </div>
+    </div>
+
+<!-- 
+▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+              Scrips
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+-->
+
+    <script src="/js/main.js"></script> 
+    
     <script>
+        // Lógica para toggle da Sidebar
         document.getElementById('sidebarToggle').addEventListener('click', function() {
             const body = document.body;
-            // A classe 'sidebar-collapsed' manipula o CSS Grid para o efeito retrátil
             body.classList.toggle('sidebar-collapsed');
         });
+
+        // --- FUNÇÕES DE MODAL ---
+
+        /** Abre um modal específico */
+        function openModal(modalId) {
+            // Certifique-se de que a div 'modal' tem 'display: none' no CSS inicial
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = 'flex'; // Usar 'flex' para centralizar melhor o conteúdo
+            }
+        }
+
+        /** Fecha um modal específico */
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        /** Prepara e abre o modal de edição/movimentação.
+         * @param {number} id - ID do produto.
+         * @param {string} nome - Nome do produto.
+         * @param {number} estoque - Estoque atual do produto.
+         */
+        function openEditModal(id, nome, estoque) {
+            document.getElementById('editModalTitle').innerText = `Movimentar: ${nome}`;
+            document.getElementById('edit_id_produto').value = id;
+            document.getElementById('estoqueAtualDisplay').innerText = estoque;
+            document.getElementById('edit_quantidade').value = 1; 
+            openModal('editProdutoModal');
+        }
+
+        // --- FUNÇÕES DE INTERAÇÃO COM O BACKEND (AJAX/Fetch) ---
+
+/* 
+▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+            Atualiza página
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+*/
+        async function atualizarEstoqueProduto() {
+            try {
+                // Refaz a requisição GET para a rota principal
+                const fullResponse = await fetch('/');
+                const htmlText = await fullResponse.text();
+
+                // Cria um elemento temporário para parsear o HTML
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = htmlText;
+                
+                // Encontra o novo corpo da tabela (usando a classe 'table-inventory')
+                const newTbody = tempDiv.querySelector('.table-inventory tbody');
+                
+                // Encontra o corpo da tabela atual
+                const currentTbody = document.querySelector('.table-inventory tbody');
+                
+                // Substitui o corpo da tabela atual pelo novo corpo
+                if (currentTbody && newTbody) {
+                    currentTbody.parentNode.replaceChild(newTbody, currentTbody);
+                }
+
+            } catch (error) {
+                console.error('Erro ao buscar estoque atualizado:', error);
+                alert('Erro ao atualizar a lista de estoque. Recarregue a página.');
+            }
+        }
+
+
+/* 
+▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+            Adicionar novo produto
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+*/        
+        document.getElementById('addProdutoForm').addEventListener('submit', async function(event) {
+            event.preventDefault(); 
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch('/produtos', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    alert('🎉 Produto adicionado com sucesso!');
+                    closeModal('addProdutoModal');
+                    // Atualiza a tabela dinamicamente
+                    await atualizarEstoqueProduto(); 
+                } else {
+                    alert('❌ Erro: ' + result.message);
+                }
+            } catch (error) {
+                console.error('Erro de rede/servidor:', error);
+                alert('Erro ao comunicar com o servidor.');
+            }
+        });
+
+/* 
+▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+                 Movimentacao 
+        Adicioar ou remover produtos
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+*/
+        document.getElementById('editProdutoForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch('/movimentacoes', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    alert('📦 Movimentação registrada!');
+                    closeModal('editProdutoModal');
+                    // Atualiza a tabela dinamicamente
+                    await atualizarEstoqueProduto(); 
+                } else {
+                    alert('❌ Erro: ' + result.message);
+                }
+            } catch (error) {
+                console.error('Erro de rede/servidor:', error);
+                alert('Erro ao comunicar com o servidor.');
+            }
+        });
+
+
+/* 
+▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+            Exclui produtos
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+*/
+        async function excluirProduto(id, nome) {
+            if (!confirm(`Tem certeza que deseja EXCLUIR o produto "${nome}" (ID: ${id}) e todas as suas movimentações?`)) {
+                return; 
+            }
+
+            try {
+                const response = await fetch(`/produtos/${id}`, {
+                    method: 'DELETE'
+                });
+
+                const result = await response.json();
+                
+                if (result.success) {
+                    alert(`🗑️ Produto excluído: ${nome}`);
+                    // Remove a linha da tabela dinamicamente
+                    const rowToRemove = document.getElementById(`row-${id}`);
+                    if (rowToRemove) {
+                        rowToRemove.remove();
+                    }
+                } else {
+                    alert('❌ Erro: ' + result.message);
+                }
+            } catch (error) {
+                console.error('Erro ao excluir produto:', error);
+                alert('Erro ao tentar excluir o produto.');
+            }
+        }
     </script>
 </body>
 </html>
