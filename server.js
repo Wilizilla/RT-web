@@ -42,8 +42,7 @@ app.post('/movimentacoes', EstoqueController.movimentarEstoque);
 // DELETE /produtos/:id
 app.delete('/produtos/:id', EstoqueController.excluirProduto);
 
-
 // Inicia o servidor e escuta na porta definida
 app.listen(PORT, '0.0.0.0', () => {
-    console.log(`🚀 Servidor rodando em http://localhost:${PORT}`);
+    console.log(`🚀 Servidor rodando NA porta: ${PORT}`);
 });
