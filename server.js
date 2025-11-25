@@ -42,7 +42,7 @@ app.post('/movimentacoes', EstoqueController.movimentarEstoque);
 // DELETE /produtos/:id
 app.delete('/produtos/:id', EstoqueController.excluirProduto);
 
-// Inicia o servidor e escuta na porta definida
+// O '0.0.0.0' é OBRIGATÓRIO para funcionar com Docker Proxy
 app.listen(PORT, '0.0.0.0', () => {
-    console.log(`🚀 Servidor rodando NA porta: ${PORT}`);
+    console.log(`🚀 Servidor rodando NA porta: http://localhost:${PORT}`);
 });
