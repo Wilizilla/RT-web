@@ -45,7 +45,7 @@ body {
     position: fixed;
     /* Fixo no topo */
     width: 100%;
-    z-index: 1020;
+    z-index: 1030;
 }
 
 
@@ -58,7 +58,7 @@ body {
     /* Logo abaixo da navbar (80px) */
     left: var(--sidebar-width);
     /* Começa onde a sidebar termina */
-    z-index: 1010;
+    z-index: 1000;
     /* Acima do conteúdo principal */
 
     /* Estilos */
@@ -90,7 +90,7 @@ body {
     position: fixed;
     height: 100vh;
     overflow-x: hidden;
-    z-index: 1000;
+    z-index: 1025;
     width: var(--sidebar-width);
 }
 
@@ -303,7 +303,7 @@ input {
     height: fit-content;
     border-left: 1px solid var(--border-light);
     box-shadow: 0 -1px 8px rgba(0, 0, 0, 0.1); 
-    z-index: 1000; 
+    z-index: 1020; 
 }
 
 h1 {
@@ -318,7 +318,7 @@ h1 {
         .modal {
             display: none; /* Escondido por padrão */
             position: fixed;
-            z-index: 1000;
+            z-index: 1040;
             left: 0;
             top: 0;
             width: 100%;
@@ -347,8 +347,8 @@ h1 {
             margin: auto; 
             
             /* 5. Empilhamento: Acima do backdrop (do .modal) */
-            z-index: 10000;
-        }
+            z-index: 1050;
+                }
         .close-btn {
             color: #aaa;
             float: right;
