@@ -9,23 +9,14 @@ const EstoqueController = {
      */
     listarEstoque: async (req, res) => {
         try {
-            // 1. Captura o termo de busca dos query parameters (ex: /?busca=azeite)
-            // Se não houver, usa uma string vazia.
-            const termoBusca = req.query.busca || '';
+            // 1. Chama o Model para calcular o estoque atualizado
+            const produtos = await EstoqueModel.calcularEstoque();
             
-            // 2. Chama o Model para calcular o estoque, passando o termo de busca
-            const produtos = await EstoqueModel.calcularEstoque(termoBusca);
-            
-            // 3. Renderiza a view (index.ejs)
-            // É importante passar o termoBusca de volta para a View, para que o campo de busca
-            // mantenha o último valor pesquisado.
-            res.render('index', { 
-                produtos: produtos,
-                termoBusca: termoBusca // Novo: Passa o termo de volta
-            });
-            
+            // 2. Renderiza a view (index.ejs) passando os dados
+            res.render('index', { produtos: produtos });
         } catch (error) {
             console.error('Erro ao listar estoque:', error);
+            // Em caso de erro, retorna um erro 500
             res.status(500).send('Erro interno do servidor ao carregar estoque.');
         }
     },

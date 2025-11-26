@@ -14,8 +14,8 @@ Sistema web para gerenciamento de estoque desenvolvido para micro e pequenas emp
 
 ## 📦 Funcionalidades
 
-- [X] Página de login
-- [X] Dashboard com resumo
+- [ ] Página de login
+- [ ] Dashboard com resumo
 - [X] Cadastro de produtos
 - [X] Controle de quantidade
 - [X] Interface responsiva
@@ -36,27 +36,23 @@ Este projeto está em fase inicial de desenvolvimento por estudantes de Análise
 
 ```
 
+RT-web
 ├── README.md
-├── frontend
-├── index.js
-├── package-lock.json
-├── package.json
-├── 📁 public
-│   ├── 📁 assets
-│   │   ├── 📁 fonts
-│   │   └── 📁 images
-│   └── 📁 css
-│       └── styles.css
-├── 📁 node_modules /depende da instalação no node/
-├── routes.js
-└── 📁 src
-    ├── 📁 config
-    ├── 📁 controllers
-    │   └── dataController.js
-    ├── 📁 middlewares
-    │   └── globalMiddleware.js
-    ├── 📁 models
-    └── 📁 views
+├── 📁package-lock.json
+├── 📁package.json
+├── 📁public
+│   ├── assets
+│   │   └── images
+│   └── styles.css
+├── server.js
+└── 📁src
+    ├── 📁config
+    │   └── db.js
+    ├── 📁controllers
+    │   └── EstoqueController.js
+    ├── 📁models
+    │   └── EstoqueModel.js
+    └── 📁views
         └── index.ejs
 
 ```

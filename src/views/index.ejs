@@ -114,18 +114,18 @@
 
 
             <div class="filter-row">
-                <div class="input-group" style="max-width: 350px;">
-                    <input type="text" placeholder="Procurar por um item" aria-label="Procurar por um item">
-                    <button class="find-button" type="button">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </div>
-                <select style="max-width: 200px;" aria-label="Tipo de produto">
-                    <option selected>Tipo de produto</option>
-                    <option value="1">Alimentos</option>
-                    <option value="2">Eletrônicos</option>
-                </select>
-                <button class="btn btn-accent">Buscar</button>
+                <form method="GET" action="/">
+                    
+                        <input 
+                            class="input-group"
+                            type="text" 
+                            placeholder= "Procure pelo nome ou identificador "
+                            name="busca"
+                            value="<%= termoBusca %>"
+                        >
+                    
+                    <button class="btn btn-primary" type="submit">Buscar</button>
+                </form>
             </div>
 
 <!-- 
@@ -154,11 +154,11 @@
                                     <td><%= produto.tipo_unidade %></td>
                                     <td id="quant-<%= produto.id_produto %>"><%= produto.quant_estoque %></td>
                                     <td>
-                                        <button class="btn btn-sm btn-info" onclick="openEditModal(<%= produto.id_produto %>, '<%= produto.nome_produto %>', <%= produto.quant_estoque %>)">
-                                            ✏️ Movimentar
+                                        <button class="btn btn-filled" onclick="openEditModal(<%= produto.id_produto %>, '<%= produto.nome_produto %>', <%= produto.quant_estoque %>)">
+                                            Editar <i class='fas fa-chevron-right'></i>
                                         </button>
-                                        <button class="btn btn-sm btn-danger" onclick="excluirProduto(<%= produto.id_produto %>, '<%= produto.nome_produto %>')">
-                                            🗑️ Excluir
+                                        <button class="btn btn-icon" onclick="excluirProduto(<%= produto.id_produto %>, '<%= produto.nome_produto %>')">
+                                            <i class='far fa-trash-alt'></i>
                                         </button>
                                     </td>
                                 </tr>
@@ -176,7 +176,8 @@
 
             <div class="action-footer">
                 <!-- <button class="btn btn-link">Excluir item</button> -->
-                <button class="btn btn-primary" onclick="openModal('addProdutoModal')"> Novo item
+                <button class="btn btn-primary" onclick="openModal('addProdutoModal')"> 
+                    Novo item <i class='fas fa-plus'></i>
                 </button>
             </div>
         </main>
@@ -191,21 +192,21 @@
     <div id="addProdutoModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal('addProdutoModal')">&times;</span>
-            <h3>Adicionar Produto e Entrada Inicial</h3>
+            <h3>Adicionar novo Item</h3>
             <form id="addProdutoForm"  class="form-collun">
-                <div class="mb-3">
-                    <label for="nome" class="form-label">Nome do Produto:</label>
+                <div class="filter-collunm">
+                    <label for="nome" class="form-label">Nome:</label>
                     <input type="text" class="input-group" id="nome" name="nome" required>
                 </div>
-                <div class="mb-3">
-                    <label for="unidade" class="form-label">Tipo de Unidade (ex: Quilo, Garrafa):</label>
+                <div class="filter-collunm">
+                    <label for="unidade" class="form-label">Unidade de medida:</label>
                     <input type="text" class="input-group" id="unidade" name="unidade" required>
                 </div>
-                <div class="mb-3">
+                <div class="filter-collunm">
                     <label for="quantidade" class="form-label">Quantidade Inicial de Entrada:</label>
                     <input type="number" class="input-group" id="quantidade" name="quantidade" min="1" required>
                 </div>
-                <button type="submit" class="btn">✅ Salvar Produto</button>
+                <button type="submit" class="btn btn-primary">Salvar</button>
             </form>
         </div>
     </div>
@@ -213,17 +214,17 @@
     <div id="editProdutoModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal('editProdutoModal')">&times;</span>
-            <h3 id="editModalTitle">Movimentar Estoque</h3>
+             <h3 id="editModalTitle">Movimentar Estoque</h3> <!-- aqui vai o nome do produto no modal -->
             <p>Estoque atual: <strong id="estoqueAtualDisplay"></strong></p>
             <form id="editProdutoForm">
-                <input type="hidden" id="edit_id_produto" name="id_produto">
+                <input type="hidden" class="input-group" id="edit_id_produto" name="id_produto">
                 
-                <div class="mb-3">
+                <div class="filter-collunm">
                     <label for="edit_quantidade" class="form-label">Quantidade a Movimentar:</label>
-                    <input type="number" class="form-control" id="edit_quantidade" name="quantidade" min="1" required>
+                    <input type="number" class="input-group" id="edit_quantidade" name="quantidade" min="1" required>
                 </div>
                 
-                <div class="mb-3">
+                <div class="filter-collunm">
                     <label for="tipo_movimentacao" class="form-label">Tipo de Movimentação:</label>
                     <select class="form-select" id="tipo_movimentacao" name="tipo_movimentacao" required>
                         <option value="entrada">Entrada (Adicionar)</option>
@@ -231,7 +232,7 @@
                     </select>
                 </div>
                 
-                <button type="submit" class="btn">🔄 Registrar Movimentação</button>
+                <button type="submit" class="btn btn-primary">Registrar movimentação</button>
             </form>
         </div>
     </div>
@@ -276,7 +277,7 @@
          * @param {number} estoque - Estoque atual do produto.
          */
         function openEditModal(id, nome, estoque) {
-            document.getElementById('editModalTitle').innerText = `Movimentar: ${nome}`;
+            document.getElementById('editModalTitle').innerText = `${nome}`; // aqui vai o nome do produto no modal
             document.getElementById('edit_id_produto').value = id;
             document.getElementById('estoqueAtualDisplay').innerText = estoque;
             document.getElementById('edit_quantidade').value = 1; 

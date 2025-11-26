@@ -1,17 +1,20 @@
 /* Variáveis de Cores e Tamanhos */
 :root {
-    --primary-color: #FF4081;
+    --primary-color: #ff4081;
+    --primary-color-10: rgba(255, 64, 128, 0.100);
     /* Cor de destaque (Rosa) */
-    --primary-dark: #C12D60;
+    --primary-dark: #FF0058;
     --secondary-color: #009688;
     /* Cor principal (Verde-água) */
     --secondary-dark: #006156;
 
     --text-color: #000000;
-    --secondary-text-color: #6c757d;
+    --secondary-text-color: #575e65;
     --background-light: #ffffff;
+    --background-medium: #f6f6f6;
     --sidebar-width: 250px;
     --border-light: #e9ecef;
+    --alert: #FF383C;
 }
 
 /* layout */
@@ -152,41 +155,16 @@ body {
     padding: 10px 0;
 }
 
-/* Botões */
+/* Configurações gerais de botões */
 .btn {
     padding: 8px 16px;
+    height: 32px;
     border: none;
     border-radius: 64px;
     cursor: pointer;
     font-weight: 200;
 }
-
-.btn-link {
-    padding: 8px 15px;
-    border: none;
-    cursor: pointer;
-    font-weight: regular;
-    transition: background-color 0.2s;
-    color: var(--primary-dark);
-    background-color: var(--background-light)
-}
-
-.btn-accent {
-    padding: 8px 15px;
-    margin: 8px;
-    border-radius: 64px;
-    cursor: pointer;
-    font-weight: regular;
-    transition: background-color 0.2s;
-    color: var(--background-light);
-    background-color: var(--primary-color)
-}
-
-.find-button {
-    background-color: var(--background-light);
-    border: none;
-}
-
+/* botão principal*/
 .btn-primary {
     background-color: var(--primary-color);
     color: white;
@@ -196,54 +174,128 @@ body {
     background-color: var(--primary-dark);
 }
 
+.btn-filled {
+    border: solid 1px var(--primary-color);
+    background: transparent;
+    color: var(--primary-dark);
+}
+
+.btn-filled:hover {
+    border: solid 1px var(--primary-color);
+    background: var(--primary-color-10); /*transparência 30% */
+    
+}
+
+/* botão link*/
+.btn-link {
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    font-weight: regular;
+    transition: background-color 0.2s;
+    color: var(--primary-dark);
+    background: transparent;
+}
+
+/* botão link */
+
+.btn-accent {
+    padding: 8px 15px;
+    margin: 8px;
+    cursor: pointer;
+    font-weight: regular;
+    transition: background-color 0.2s;
+    color: var(--background-light);
+    background: trasnsparent;
+}
+
+.find-button {
+    background: transparent;
+}
+
+
+.btn-icon {
+    color: var(--secondary-text-color);
+    background: transparent;
+    border: 0;
+    border-radius: 64px;
+    font-size:18px
+}
+
+.btn-icon:hover {
+    color: var(--alert);
+    background: transparent;
+}
+
 /* Inputs e Filtros */
+
 .filter-row {
-    display: flex;
+    
     gap: 24px;
-    /*margin-bottom: 32px;*/
     border-radius: 64px;
     padding: 8px 12px;
     margin-left: auto; /* Isso empurra para a direita */
     margin-bottom: 32px; /* Isso empurra para a direita */
     margin-top: 32px; /* Isso empurra para a direita */
-
+    align-items: center;   
 }
-.form-collun {
-    display: list-item;
-    gap: 24px;
-    /*margin-bottom: 32px;*/
+.filter-collunm{
+
+    gap: 8px;
     border-radius: 64px;
     padding: 8px 12px;
     margin-left: auto; /* Isso empurra para a direita */
-    margin-bottom: 32px; /* Isso empurra para a direita */
-    margin-top: 32px; /* Isso empurra para a direita */
-
+    margin-bottom: 8px; /* Isso empurra para a direita */
+    /* margin-top: 8px; Isso empurra para a direita */
+    align-items: center;   
 }
+
 
 .form-label{
-    margin-bottom: 32px;
-    margin-top: 32px; /* Isso empurra para a direita */
+    margin-bottom: 8px;
+    margin-top: 16px; /* Isso empurra para a direita */
+    font-weight: 100;
+    font-size: 12px;
+    display: block;
+    color: var(--secondary-text-color);
 
 }
 
 .input-group {
-    display: flex;
+    /*display: flex;*/
     color: var(--secondary-text-color);
     padding: 8px 12px;
     border: 1px solid var(--border-light);
     border-radius: 64px;
     font-size: 1rem;
     flex-grow: 1;
+    font-family: Arial, Helvetica, sans-serif;
+    width:400px;
 }
 
+
+.input-group::before {
+    content: "\f002"; /* Código Unicode da lupa */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+    z-index: 1;
+    pointer-events: none; /* Não interfere com cliques */
+}
 
 select {
     color: var(--secondary-text-color);
     padding: 8px 12px;
     border: 1px solid var(--border-light);
-    border-radius: 8px;
+    border-radius: 64px;
     font-size: 1rem;
     flex-grow: 1;
+    font-family: Arial, Helvetica, sans-serif;
+    width:400px;
 }
 
 input {
@@ -287,7 +339,7 @@ input {
 }
 
 .table-inventory tr:hover {
-    background-color: var(--border-light);
+    background-color: var(--background-medium);
     color: var(--secondary-text-color);
 }
 
@@ -328,8 +380,9 @@ h1 {
         }
         .modal-content {
             background-color: var(--background-light);
-            border: 1px solid #888;
+            border: 0;
             border-radius: 4px;
+            box-shadow: rgba(0,0,0,0.8);
 
             /* 1. Largura: A chave para respeitar o conteúdo */
             /* Define que a largura deve ser determinada pelo conteúdo, e não forçada */

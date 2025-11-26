@@ -1,4 +1,3 @@
-
 // src/models/EstoqueModel.js
 
 const pool = require('../config/db'); // Importa o pool de conexões
@@ -7,29 +6,13 @@ const pool = require('../config/db'); // Importa o pool de conexões
 
 const EstoqueModel = {
     /**
-     * Calcula o estoque atual de todos os produtos, opcionalmente filtrando por um termo de busca. 🥳
+     * Calcula o estoque atual de todos os produtos.
      * Retorna uma lista de produtos com a quantidade total calculada.
-     * @param {string} termoBusca - Termo a ser usado na busca (nome do produto ou ID).
      */
-    calcularEstoque: async (termoBusca = '') => { // <--- MODIFICADO: Aceita termoBusca
-        
-        // Prepara o termo para ser usado na cláusula LIKE (envolve em %, converte para minúsculas)
-        const termoSql = `%${termoBusca.toLowerCase()}%`; 
-        
-        let whereClause = '';
-        let params = [];
-        
-        // A cláusula WHERE só é adicionada se houver um termo de busca
-        if (termoBusca) {
-            whereClause = `
-                WHERE 
-                    LOWER(p.nome_produto) LIKE ? OR 
-                    p.id_produto LIKE ?
-            `;
-            // Adiciona o termo de busca duas vezes, uma para o nome e outra para o ID
-            params = [termoSql, termoSql]; 
-        }
-
+    calcularEstoque: async () => {
+        // Consulta SQL complexa usando JOIN e SUM para calcular o estoque.
+        // O estoque é a soma das movimentações de 'entrada' (tipo_movimentacao = 1)
+        // menos a soma das movimentações de 'saída' (tipo_movimentacao = 0).
         const query = `
             SELECT
                 p.id_produto,
@@ -41,14 +24,12 @@ const EstoqueModel = {
                 tb_produtos p
             LEFT JOIN
                 tb_movimentacoes m ON p.id_produto = m.id_produto
-            ${whereClause}   GROUP BY
+            GROUP BY
                 p.id_produto, p.nome_produto, p.tipo_unidade
             ORDER BY
                 p.nome_produto;
         `;
-        
-        // Executa a consulta, passando a lista de parâmetros (vazia se não houver busca)
-        const [rows] = await pool.query(query, params); 
+        const [rows] = await pool.query(query);
         return rows;
     },
 
@@ -124,6 +105,10 @@ const EstoqueModel = {
             throw error;
         }
     }
+
+
+
+    
 };
 
 module.exports = EstoqueModel;
