@@ -149,7 +149,7 @@
                         <tbody>
                             <% produtos.forEach(produto => { %>
                                 <tr id="row-<%= produto.id_produto %>">
-                                    <td><%= produto.id_produto %></td>
+                                    <td><%= String(produto.id_produto).padStart(4, '0') %></td>
                                     <td><%= produto.nome_produto %></td>
                                     <td><%= produto.tipo_unidade %></td>
                                     <td id="quant-<%= produto.id_produto %>"><%= produto.quant_estoque %></td>
@@ -223,7 +223,7 @@
                     <label for="edit_quantidade" class="form-label">Quantidade a Movimentar:</label>
                     <input type="number" class="input-group" id="edit_quantidade" name="quantidade" min="1" required>
                 </div>
-                
+                np
                 <div class="filter-collunm">
                     <label for="tipo_movimentacao" class="form-label">Tipo de Movimentação:</label>
                     <select class="form-select" id="tipo_movimentacao" name="tipo_movimentacao" required>

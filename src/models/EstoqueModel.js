@@ -44,7 +44,7 @@ const EstoqueModel = {
             ${whereClause}   GROUP BY
                 p.id_produto, p.nome_produto, p.tipo_unidade
             ORDER BY
-                p.nome_produto;
+                p.id_produto DESC;
         `;
         
         // Executa a consulta, passando a lista de parâmetros (vazia se não houver busca)
